@@ -61,14 +61,7 @@ class DetailInfo extends React.Component {
 			</DataTable>
 		<br/>
 		<br/>
-		  <div className="actions">
-			<Button raised accent ripple>
-				<Icon  name="add_shopping_cart" /> Order Now
-			</Button>
-			<Button raised accent>
-				<Icon name='add_box' /> Add to Bag
-			</Button>
-		  </div>
+		<Buttons info={item} />
 		</article></div>);
 	}
 }
