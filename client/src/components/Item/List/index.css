@@ -1,0 +1,32 @@
+.list-item {
+  padding: 8px 5px;
+  display: flex;
+  flex: 1;
+  color: gray;
+}
+.list-item:hover {
+  cursor: pointer;
+  border-bottom: solid 1px #DEDEDE;
+  box-sizing: broder-box;
+  box-shadow: 0 2px 5px 0 rgba(171,171,171,.6);
+}
+.list-item .image {
+  flex-direction: row;
+}
+.list-item .image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+.list-item a, .link-item {
+  color: gray;
+  text-decoration: none;
+}
+.list-item a.title {
+  color: #336699;
+}
+
+.list-item .details {
+  padding-left: 8px;
+  text-overflow: elipsis;
+}

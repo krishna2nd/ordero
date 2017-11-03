@@ -1,0 +1,34 @@
+.lini-item {
+  padding: 8px 5px;
+  display: flex;
+  flex: 1;
+  color: gray;
+  width: 92%;
+  box-shadow: 0 2px 5px 0 rgba(171,171,171,.6);
+  border-radius: 4px;
+  padding: 10px;
+}
+.lini-item:hover {
+  cursor: pointer;
+  box-sizing: broder-box;
+  box-shadow: 0 4px 8px 0 rgba(200,171,171,.6);
+}
+.lini-item .image {
+  flex-direction: row;
+}
+.lini-item .image img {
+  width: 160px;
+  height: 120px;
+}
+.lini-item a, .link-item {
+  color: gray;
+  text-decoration: none;
+}
+.lini-item a.title {
+  color: #336699;
+}
+
+.lini-item .details {
+  padding-left: 8px;
+  text-overflow: elipsis;
+}
