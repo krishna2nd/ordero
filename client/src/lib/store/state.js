@@ -2,32 +2,46 @@ const categories = [
 	{
 	  category: 'cafe',
 	  title: "Cafe's",
-	  icon: 'https://b.zmtcdn.com/images/search_tokens/app_icons/category_1.png'
+	  icon: 'https://b.zmtcdn.com/images/search_tokens/app_icons/category_1.png',
+	  image: "https://image.ibb.co/c8YJTG/unnamed_18.jpg",
+	  description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+	  items: []
 	},
 	{
 	  category: 'non-veg',
 	  title: "Non Veg",
-	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/special_14.png'
+	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/special_14.png',
+	  image: "https://image.ibb.co/c8YJTG/unnamed_18.jpg",
+	  description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+	  items: []
 	},
 	{
 	  category: 'veg',
 	  title: "Vegetarion",
-	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/category_9.png'
+	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/category_9.png',
+	  description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+	  items: []
 	},
 	{
 	  category: 'beverages',
 	  title: "Beverages",
-	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/category_3.png'
+	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/category_3.png',
+	  description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+	  items: []
 	},
 	{
 	  category: 'salad',
 	  title: "Salad",
-	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/category_9.png'
+	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/category_9.png',
+	  description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+	  items: []
 	},
 	{
 	  category: 'deserts',
 	  title: "Sweets / Deserts",
-	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/category_5.png'
+	  icon:  'https://b.zmtcdn.com/images/search_tokens/app_icons/category_5.png',
+	  description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+	  items: []
 	}];
 
 const randomString = (length, chars) => {
@@ -39,13 +53,14 @@ const randomString = (length, chars) => {
 const randomId = () => randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 function randomItem() {
-	const cost = Math.random(500)*100;
+	const cost =Math.floor(Math.random(500)*100);
 	const tax = (cost * .16).toFixed(2);
 	const sCharge = (cost * .08).toFixed(2);
-	const price = cost+tax+sCharge;
-	return  {
+	const price = (cost+(+tax)+(+sCharge)).toFixed(2);
+	const objCategory = categories[Math.floor(Math.random(categories.length)*categories.length)]
+	const item = {
 		id: randomId(),
-		category: categories[Math.floor(Math.random(categories.length)*categories.length)].category,
+		category: objCategory.category,
 		title: "Item name in detail log its some dummy",
 		info: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.`,
 		description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -79,8 +94,8 @@ function randomItem() {
 						{calories: 'Iron', quantity: 0, value: 0},
 						{calories: 'Magnesium', quantity: 0, value: 0}
 					],
-		like: Math.random(1000) * 1000,
-		dislike: Math.random(100) * 100,
+		like: Math.floor(Math.random(1000) * 1000),
+		dislike: Math.floor(Math.random(100) * 100),
 		price: price,
 		priceTable: [
 			{particulars: 'Item cost', price: `$ ${cost}`},
@@ -88,13 +103,16 @@ function randomItem() {
 			{particulars: 'Service charge', price: `$ ${sCharge}`},
 			{particulars: '', price: `$ ${price}`},
 		],
-		offer: `OFF ${Math.random(25)*100}%`
+		offer: `OFF ${Math.floor((Math.random(25)*100))}%`
 	};
+
+	objCategory.items.push(item);
+	return item;
 }
 
 const items = [];
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 100; i++) {
 	items.push(randomItem());
 }
 

@@ -6,10 +6,10 @@ class CategoryItem extends React.Component {
   render() {
     const { info } = this.props;
     return (
-      <a href={`/categories/${info.type}`} className="link-item">
+      <a href={`/categories/${info.category}`} className="link-item">
         <div className="cat-item">
           <div className="image">
-            <img src={info.image} alt={info.title} />
+            <img src={info.icon} alt={info.title} />
           </div>
           <div className="details">
             <span className="title">{info.title}</span>
