@@ -1,0 +1,14 @@
+.modal-buy-now {
+	width: 70%;
+	text-align: left;
+}
+
+.buy-now {
+}
+.shopping {
+	text-align: center !important;
+}
+
+.buy-now:hover, .shopping:hover {
+	opacity: .8;
+}

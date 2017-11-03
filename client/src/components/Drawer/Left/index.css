@@ -1,0 +1,9 @@
+.drawer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.drawer .header {
+  height: 120px;
+  margin-bottom: 10px;
+}

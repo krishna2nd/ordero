@@ -1,0 +1,11 @@
+.actions button {
+	text-align: right;
+}
+.actions button {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.actions .mdl-button--icon {
+	margin-left: 0px;
+	margin-right: 0px;	
+}

@@ -1,0 +1,16 @@
+.flex-container {
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
+}
+.flex-container .menu-box {
+  width: 300px;
+  border-right: none;
+  box-sizing: border-box;
+  box-shadow: 3px -6px 8px -1px rgba(171,171,171,.6)
+}
+.flex-container .main-box {
+  width: 100%;
+  box-sizing: border-box;
+}
