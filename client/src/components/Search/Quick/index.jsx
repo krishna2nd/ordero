@@ -1,15 +1,16 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
 
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import {Grid, Cell } from 'react-mdl';
 
 import './index.css';
 
 const QuickIcon = ({info}) => {
   return (
-    <a className="link" href={`/categories/${info.category||info.type}`}>
+    <a className="link" href={`/categories/${info.category}`}>
       <div>
-        <img src={info.image} alt={info.title} />
+        <img src={info.icon} alt={info.title} />
         <span>{info.title}</span>
       </div>
     </a>
@@ -18,39 +19,8 @@ const QuickIcon = ({info}) => {
 
 class QuickSearch extends React.Component {
   render() {
-    const imgHeader = 'https://image.ibb.co/b1jsoG/unnamed_19.jpg'; //this.props.assets.headerImage;
-    const items = [
-    {
-      category: 'cafe',
-      title: "Cafe's",
-      image: 'https://b.zmtcdn.com/images/search_tokens/app_icons/category_1.png'
-    },
-    {
-      category: 'non-veg',
-      title: "Non Veg",
-      image: 'https://b.zmtcdn.com/images/search_tokens/app_icons/special_14.png'
-    },
-    {
-      category: 'veg',
-      title: "Vegetarion",
-      image: 'https://b.zmtcdn.com/images/search_tokens/app_icons/category_9.png'
-    },
-    {
-      category: 'beverages',
-      title: "Beverages",
-      image: 'https://b.zmtcdn.com/images/search_tokens/app_icons/category_3.png'
-    },
-    {
-      category: 'salad',
-      title: "Salad",
-      image: 'https://b.zmtcdn.com/images/search_tokens/app_icons/category_9.png'
-    },
-    {
-      category: 'deserts',
-      title: "Sweets / Deserts",
-      image: 'https://b.zmtcdn.com/images/search_tokens/app_icons/category_5.png'
-    }];
-
+    const imgHeader = this.props.headerImage;
+    const items = this.props.store.categories || [];
     return (
       <div className="quik">
         <h4>Quick Searches</h4>
@@ -69,4 +39,12 @@ class QuickSearch extends React.Component {
 //   // assets: PropTypes.object
 // };
 
-export default QuickSearch;
+const mapStateToProps = state => {
+  return {
+    store: state,
+  }
+};
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuickSearch);
+

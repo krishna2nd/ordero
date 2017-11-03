@@ -1,3 +1,4 @@
-export default function(state={}, action) {
+import {items} from '../../store/state'
+export default function(state=items, action) {
   return state;
 }
