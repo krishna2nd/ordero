@@ -1,0 +1,17 @@
+ article.categories {
+	margin-top: 100px;
+	padding: 20px;
+	width: 90%;
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+article h4,article h5,article h6 {
+	margin: 0px;
+	padding: 0px;
+}
+article .intro {
+	color: #898989;
+}
+

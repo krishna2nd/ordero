@@ -1,0 +1,35 @@
+.quik {
+	margin-top: 40px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.quik img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80px;
+	height: 70px;
+	display: block;
+}
+
+.quik .link {
+	text-align: center;
+	text-decoration: none;
+}
+
+.quik .quik-item {
+	padding: 10px;
+	box-sizing: border-box;
+}
+.quik .quik-item:hover {
+	box-shadow: 0 4px 8px 0 rgba(200,171,171,.6);
+}
+
+.quik h4 {
+	margin: 0px;
+	padding: 0px;
+}
+.quik b {
+	color: grey;
+}

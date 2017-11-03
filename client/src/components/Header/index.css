@@ -1,0 +1,44 @@
+header {
+  background-color: #991122;
+  padding: 20px 2px 2px 10px;
+  width: 100%;
+  position: fixed;
+}
+
+header .w-title {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font-size: 32px;
+  line-height: 20px;
+}
+header  i {
+  color: #EDEDED;
+  font-size: 9px;
+  margin-left: 10px;
+}
+
+.home, .basket {
+  font-size: 36px;
+  padding: 2px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.home:hover, .basket:hover {
+  padding : 2px;
+  box-shadow: 1px 1px 3px 2px #FFFFFF;
+
+}
+
+.count {
+  margin-top: 0px;
+  font-weight: bold;
+  color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: yellow;
+  margin-left: -15px;
+  position: absolute;
+}
