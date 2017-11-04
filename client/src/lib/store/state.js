@@ -50,16 +50,22 @@ const randomString = (length, chars) => {
 	return result;
 }
 
+function r() {
+	return Math.floor(Math.random() * 30)
+}
+
 const randomId = () => randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+let counter = 1;
+const seq = () => counter + 1
 
 function randomItem() {
-	const cost =Math.floor(Math.random(500)*100);
+	const cost =Math.floor(Math.random()*500);
 	const tax = (cost * .16).toFixed(2);
 	const sCharge = (cost * .08).toFixed(2);
 	const price = (cost+(+tax)+(+sCharge)).toFixed(2);
 	const objCategory = categories[Math.floor(Math.random(categories.length)*categories.length)]
 	const item = {
-		id: randomId(),
+		id: 'item-' + seq(), 
 		category: objCategory.category,
 		title: "Item name in detail log its some dummy",
 		info: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.`,
@@ -77,25 +83,25 @@ function randomItem() {
 		},
 		recipie: `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.`,
 		nutrition: [
-						{calories: 'Saturated fat', quantity: 0, value: 0},
-						{calories: 'Polyunsaturated fat', quantity: 0, value: 0},
-						{calories: 'Monounsaturated fat', quantity: 0, value: 0},
-						{calories: 'Cholesterol', quantity: 0, value: 0},
-						{calories: 'Sodium', quantity: 0, value: 0},
-						{calories: 'Potassium', quantity: 0, value: 0},
-						{calories: 'Carbohydrate', quantity: 0, value: 0},
-						{calories: 'Dietary fiber', quantity: 0, value: 0},
-						{calories: 'Sugar', quantity: 0, value: 0},
-						{calories: 'Vitamin A', quantity: 0, value: 0},
-						{calories: 'Vitamin B-12', quantity: 0, value: 0},
-						{calories: 'Protein', quantity: 0, value: 0},
-						{calories: 'Vitamin B-6', quantity: 0, value: 0},
-						{calories: 'Vitamin C', quantity: 0, value: 0},
-						{calories: 'Iron', quantity: 0, value: 0},
-						{calories: 'Magnesium', quantity: 0, value: 0}
+						{calories: 'Saturated fat', quantity: r(), value: r()},
+						{calories: 'Polyunsaturated fat', quantity: r(), value: r()},
+						{calories: 'Monounsaturated fat', quantity: r(), value: r()},
+						{calories: 'Cholesterol', quantity: r(), value: r()},
+						{calories: 'Sodium', quantity: r(), value: r()},
+						{calories: 'Potassium', quantity: r(), value: r()},
+						{calories: 'Carbohydrate', quantity: r(), value: r()},
+						{calories: 'Dietary fiber', quantity: r(), value: r()},
+						{calories: 'Sugar', quantity: r(), value: r()},
+						{calories: 'Vitamin A', quantity: r(), value: r()},
+						{calories: 'Vitamin B-12', quantity: r(), value: r()},
+						{calories: 'Protein', quantity: r(), value: r()},
+						{calories: 'Vitamin B-6', quantity: r(), value: r()},
+						{calories: 'Vitamin C', quantity: r(), value: r()},
+						{calories: 'Iron', quantity: r(), value: r()},
+						{calories: 'Magnesium', quantity: r(), value: r()}
 					],
-		like: Math.floor(Math.random(1000) * 1000),
-		dislike: Math.floor(Math.random(100) * 100),
+		like: Math.floor(Math.random() * 1000),
+		dislike: Math.floor(Math.random() * 100),
 		price: price,
 		priceTable: [
 			{particulars: 'Item cost', price: `$ ${cost}`},
@@ -103,7 +109,7 @@ function randomItem() {
 			{particulars: 'Service charge', price: `$ ${sCharge}`},
 			{particulars: '', price: `$ ${price}`},
 		],
-		offer: `OFF ${Math.floor((Math.random(25)*100))}%`
+		offer: `OFF ${Math.floor((Math.random()*25))}%`
 	};
 
 	objCategory.items.push(item);
