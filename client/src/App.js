@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './modules/home';
 import Item from './modules/item';
 import Order, {Checkout} from './modules/order';
@@ -19,10 +19,10 @@ class App extends Component {
     return (
         <Router>
           <div>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/categories/:category' component={CategoryList}  />
-            <Route exact path='/:item' component={Item}  />
-            <Route exact path="/order/checkout" component={Checkout}/>
+            <Route exact  path='/' component={Home} />
+            <Route exact  path='/order/checkout' component={Checkout}/>
+            <Route exact  path='/categories/:category' component={CategoryList}  />
+            <Route exact  path='/:item' component={Item}  />
           </div>
         </Router>
     );

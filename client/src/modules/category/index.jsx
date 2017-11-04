@@ -10,9 +10,8 @@ function CategoryList(props) {
 console.log(props)
   const paramCat= props.match.params.category;
   const categories = props.store.categories;
-  const category = categories.filter(cat => (cat.category === paramCat) ? cat : undefined)
-  const items = category[0].items;
-
+  const category = categories.find(cat => cat.category === paramCat)
+  const items = category.items;
   return (
 	<Layout >
 	  	<article className="categories">

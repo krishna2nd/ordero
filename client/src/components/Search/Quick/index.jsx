@@ -27,17 +27,13 @@ class QuickSearch extends React.Component {
         <b>Discover your cusines by type of meal</b>
         <Grid>
           
-          {items.map((item, index) => <Cell className='quik-item' col={2}> <QuickIcon key={`${item.category}-${index}`} info={item} /></Cell>)}  
+          {items.map((item, index) => <Cell key={`${item.category}-${index}-c`} className='quik-item' col={2}> <QuickIcon key={`${item.category}-${index}`} info={item} /></Cell>)}  
           
         </Grid>
       </div>
     );
   }
 }
-
-// LeftDrawer.prototype = {
-//   // assets: PropTypes.object
-// };
 
 const mapStateToProps = state => {
   return {

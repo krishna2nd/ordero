@@ -57,6 +57,7 @@ class BuyNow extends React.Component {
 			</DataTable>
             <br/>
             <br/>
+            <h6 style={{textAlign:'center'}}>Please wait, we will serve your order in 20 mins</h6>
           </DialogContent>
           <DialogActions>
             <Button type='button' onClick={this.handleCloseDialog}>Close</Button>

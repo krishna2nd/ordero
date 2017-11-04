@@ -1,14 +1,18 @@
-import React, { PropTypes } from 'react';
-import {Grid, Cell, Button, Icon, IconButton, DataTable, TableHeader, Tooltip, Chip, ChipContact} from 'react-mdl';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import {
+	Grid, Cell,
+	Button, Icon,
+	IconButton, DataTable, TableHeader,
+	Tooltip, Chip, ChipContact
+} from 'react-mdl';
 import Buttons from '../../Purchase/Buttons';
+import EmojiActions from '../../EmojiActions';
+
 import './index.css'
 
 class ShortInfo extends React.Component {
-	ViewItem(e) {
-		const { info } = this.props;
-		console.log(info);
-		window.location.href = '/'+info.id;
-	}
 	render() {
 		const { info } = this.props;
 		return (
@@ -18,16 +22,13 @@ class ShortInfo extends React.Component {
 						<img src={info.media.thumbs[0]} className="thumb" />
 					</Cell>
 					<Cell col={8} >
-						<span style={{float:'right'}} className="like-dislike">
-							    <Icon className="mdl-color-text--green medium" name="thumb_up" colored ripple />
-							    <span>{info.like}</span>
-							    <Icon className="mdl-color-text--red medium"  name="thumb_down" colored ripple />
-							    <span>{info.dislike}</span>
-			  			</span>
+						<EmojiActions info={info} />
 
-			  			<div className="details" onClick={this.ViewItem.bind(this)}>
-							<h4>{info.title}</h4>
-							<i className="intro">{info.info}</i>
+			  			<div className="details">
+			  				<Link to={'/' + info.id} >
+								<h4>{info.title}</h4>
+								<i className="intro">{info.info}</i>
+							</Link>
 						  <br/>
 						</div>
 						<Tooltip label={
@@ -57,7 +58,9 @@ class ShortInfo extends React.Component {
 	}
 }
 
-ShortInfo.PropTypes = {
+const mapStateToProps = state => ({
+  store: state,
+});
+const mapDispatchToProps = dispatch => ({ dispatch });
 
-}
-export default ShortInfo;
+export default connect(mapStateToProps, mapDispatchToProps)(ShortInfo);

@@ -24,11 +24,6 @@ class LeftDrawer extends React.Component {
   }
 }
 
-// LeftDrawer.prototype = {
-//   // assets: PropTypes.object
-// };
-
-
 const mapStateToProps = state => {
   return {
     store: state,
