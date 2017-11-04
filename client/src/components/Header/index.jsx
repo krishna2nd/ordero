@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {Grid, Cell, Icon} from 'react-mdl';
+import { connect } from 'react-redux';
 import  './index.css';
 
 class Header extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       hide: false
     }
@@ -38,7 +39,8 @@ class Header extends Component {
   }
   render() {
     if (this.state.hide) return null;
-
+    const active = this.props.store.orders.find(order => order.status === 'active')
+    const count = active && active.items.length;
     return (
       <header className="header">
         <Grid noSpacing={true}>
@@ -48,7 +50,9 @@ class Header extends Component {
             </a>
             <a href="/order/checkout">
               <Icon name="shopping_basket" className="basket" />
-              <i className="count">12</i>
+              {
+                count ? (<i className="count">{count}</i>) : null
+              }
             </a>
           </Cell>
           <Cell col={6}></Cell>
@@ -64,4 +68,9 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => ({
+  store: state,
+});
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

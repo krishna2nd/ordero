@@ -2,6 +2,7 @@
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducer from '../reducers';
+import state from './state';
 
 let middleware = applyMiddleware(thunk);
 

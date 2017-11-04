@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Layout from '../../components/Layout';
 import Trending from '../../components/Trending';
 import QuickSearch from '../../components/Search/Quick';
@@ -10,7 +11,7 @@ function Home(props) {
     <Layout >
       <div className="cover">
       </div>
-      <QuickSearch />
+      <QuickSearch headerImage={'https://image.ibb.co/b1jsoG/unnamed_19.jpg'}/>
       <Trending />
     </Layout>
   );
@@ -19,4 +20,11 @@ function Home(props) {
 Home.propTypes = {
 };
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    store: state,
+  }
+};
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

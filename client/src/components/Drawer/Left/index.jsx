@@ -1,6 +1,7 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
 
 import React, { PropTypes } from 'react';
+import {connect} from 'react-redux';
 import CategoryItem from '../../Item/Category';
 
 import './index.css';
@@ -8,13 +9,7 @@ import './index.css';
 class LeftDrawer extends React.Component {
   render() {
     const imgHeader = 'https://image.ibb.co/b1jsoG/unnamed_19.jpg'; //this.props.assets.headerImage;
-    const category = {
-      title: "Yummy non-veg",
-      image: "https://image.ibb.co/c8YJTG/unnamed_18.jpg",
-      description: "sdsdsd sdss ds sds sdsd ",
-      type: "non-veg",
-    }
-    const categories = [category, category, category, category];
+    const categories = this.props.store.categories;
     return (
       <div className="drawer">
         <div
@@ -33,4 +28,13 @@ class LeftDrawer extends React.Component {
 //   // assets: PropTypes.object
 // };
 
-export default LeftDrawer;
+
+const mapStateToProps = state => {
+  return {
+    store: state,
+  }
+};
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default connect(mapStateToProps, mapDispatchToProps)(LeftDrawer);
+

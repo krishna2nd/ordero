@@ -11,7 +11,7 @@ class DetailInfo extends React.Component {
 		return (
 		<div>
 		<div className="item-cover" style={{
-		backgroundImage: `url('${item.image}')`
+		backgroundImage: `url('${item.media.cover}')`
 	  }}></div>
 	  <article>
 		  <Buttons info={item} />

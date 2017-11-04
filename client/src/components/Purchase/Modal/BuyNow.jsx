@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import {Dialog, DialogTitle, DialogContent, DialogActions, Icon, Button, DataTable, TableHeader} from 'react-mdl';
+import { buyNowItem, buyNowItemDone } from '../../../lib/actions';
 
 import './index.css'
 
@@ -12,24 +14,24 @@ class BuyNow extends React.Component {
   }
 
   handleOpenDialog() {
+    const item = this.props.info;
+    this.props.dispatch(buyNowItem(item.id))
     this.setState({
       openDialog: true
     });
   }
 
   handleCloseDialog() {
+    const item = this.props.info;
+    this.props.dispatch(buyNowItemDone(item.id))
     this.setState({
       openDialog: false
     });
   }
 
   render() {
-  	const item = this.props.info || { title: "testtt", priceTable: [
-		{particulars: 'Item cost', price: '$ 10'},
-		{particulars: 'Tax', price: '$ 2.22'},
-		{particulars: 'Service charge', price: '$ 1'},
-		{particulars: '', price: '$ 13.22'},
-	],};
+  	const item = this.props.info || {};
+    const order = this.props.store.orders.find(order => order.status === 'active') || {};
     return (
       <span>
       	<Button className='buy-now mdl-color--orange mdl-color-text--white' raised ripple colored onClick={this.handleOpenDialog} raised ripple>
@@ -41,7 +43,7 @@ class BuyNow extends React.Component {
           <DialogTitle>Order details for {item.title}</DialogTitle>
           <DialogContent>
             <p>Your order for buying {item.title} is placed. Please keep note of below order id</p>
-            <p> ORDER ID: LTR-123BC-RT134 </p>
+            <p> ORDER ID: {order.id} </p>
             <br/>
             <h6>Price details</h6>
             <DataTable
@@ -65,4 +67,12 @@ class BuyNow extends React.Component {
   }
 }
 
-export default BuyNow;
+
+const mapStateToProps = state => {
+  return {
+    store: state,
+  }
+};
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default connect(mapStateToProps, mapDispatchToProps)(BuyNow);

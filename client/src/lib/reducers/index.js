@@ -1,16 +1,17 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import user from './user';
-import home from './home';
-import item from './item';
-import order from './order';
+import users from './user';
+import categories from './category';
+import items from './item';
+import orders from './order';
+
 
 const rootReducer = combineReducers({
-  user,
-  home,
-  item,
-  order,
+  users,
+  items,
+  categories,
+  orders,
   routing: routerReducer
 });
 
