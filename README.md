@@ -38,7 +38,7 @@ Prefered Development env:
 3. install webpack global
 
 
-Known issues
+Known limitations
 ---
 1. Later checkout for multipple items are not available
 2. Lint errors are not fixed
