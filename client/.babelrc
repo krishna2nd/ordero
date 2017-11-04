@@ -1,8 +1,10 @@
 {
-  "presets": [["env", {
-    "targets": {
-      "browsers": ["last 2 versions", "safari >= 7"]
-    }
-  }], "react", "stage-1"],
+  "presets": [
+  	["env", {
+    	"targets": {
+      		"browsers": ["last 10 versions", "safari >= 7"]
+    	}
+  		}
+  	], "react", "stage-1"],
   "plugins": ["react-hot-loader/babel"]
 }

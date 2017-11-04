@@ -4,7 +4,9 @@
   "description": "Make my menu and make an order in resturent",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build": "cd client && webpack -p --config webpack.prod.config.js --progress && cd ..",
+    "build:dev": "cd client && webpack -p --progress && cd .."
   },
   "repository": {
     "type": "git",
