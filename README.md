@@ -1,7 +1,7 @@
 ## Ordero
 
 ##### Ordero is an interaction UI based on given wireframes. Sample UI/UX implementation for a resturent menu search, order tool
-[Live Demo]()
+[Live Demo](https://postman-laps-72727.netlify.com)
 
 Requirements 
 ---
@@ -44,5 +44,4 @@ Known issues
 2. Lint errors are not fixed
 3. Test cases are pending
 4. Integration to build system is not added
-5. Live demo hosting is not available
 
