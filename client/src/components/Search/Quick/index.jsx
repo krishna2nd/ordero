@@ -1,19 +1,20 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {Grid, Cell } from 'react-mdl';
 
 import './index.css';
 
 const QuickIcon = ({info}) => {
   return (
-    <a className="link" href={`/categories/${info.category}`}>
+    <Link className="link" to={`/categories/${info.category}`}>
       <div>
         <img src={info.icon} alt={info.title} />
         <span>{info.title}</span>
       </div>
-    </a>
+    </Link>
     )
 }
 

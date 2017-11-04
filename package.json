@@ -1,0 +1,32 @@
+{
+  "name": "ordero",
+  "version": "1.0.0",
+  "description": "Make my menu and make an order in resturent",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/krishna2nd/ordero.git"
+  },
+  "keywords": [
+    "order",
+    "menu",
+    "hotel",
+    "resturent",
+    "motel",
+    "food"
+  ],
+  "author": "Krisihna Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krishna2nd/ordero/issues"
+  },
+  "homepage": "https://github.com/krishna2nd/ordero#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "react-hot-loader": "^3.1.1"
+  }
+}
