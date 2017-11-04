@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently \"node server/index.js\" \"open http://localhost:8080\"",
     "build": "cd client && webpack -p --config webpack.prod.config.js --progress && cd ..",
-    "build:dev": "cd client && webpack -p --progress && cd .."
+    "build:dev": "cd client && webpack --progress && cd .."
   },
   "repository": {
     "type": "git",
