@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {Button, Icon, IconButton, DataTable, TableHeader} from 'react-mdl';
 import Layout from '../../components/Layout';
@@ -7,7 +6,6 @@ import ShortInfo from '../../components/Item/ShortInfo'
 import './index.css';
 
 function CategoryList(props) {
-console.log(props)
   const paramCat= props.match.params.category;
   const categories = props.store.categories;
   const category = categories.find(cat => cat.category === paramCat)
@@ -27,10 +25,6 @@ console.log(props)
 	</Layout>
   );
 }
-
-CategoryList.propTypes = {
-};
-
 
 const mapStateToProps = state => {
   return {
