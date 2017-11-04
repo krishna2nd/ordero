@@ -8,8 +8,8 @@ class Buttons extends React.Component {
 	render() {
 		return (
 			<div className="actions">
-				<MyBag />
-				<BuyNow />
+				<MyBag info={this.props.info} />
+				<BuyNow  info={this.props.info} />
 		 	 </div>
 		);
 	}

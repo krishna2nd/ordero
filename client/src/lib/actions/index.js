@@ -5,6 +5,7 @@ export const GET_ITEM_DETAILS = 'GET_ITEM_DETAILS';
 export const ADD_ITEM_TO_BAG = 'ADD_ITEM_TO_BAG';
 export const ITEMS_CHECKOUT = 'ITEMS_CHECKOUT';
 export const ITEM_BUY_NOW = 'ITEM_BUY_NOW';
+export const ITEM_BUY_NOW_COMPLETE = 'ITEM_BUY_NOW_COMPLETE';
 export const ITEM_LIKE = 'ITEM_LIKE';
 export const ITEM_DISLIKE = 'ITEM_DISLIKE';
 
@@ -62,10 +63,20 @@ export function checkoutItems() {
 	}
 }
 
-export function buyNowItem() {
+export function buyNowItem(id) {
 	return dispatch => {
 		dispatch({
 			type: ITEM_BUY_NOW,
+			id
+		})
+	}
+}
+
+export function buyNowItemDone(id) {
+	return dispatch => {
+		dispatch({
+			type: ITEM_BUY_NOW_COMPLETE,
+			id
 		})
 	}
 }

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import {Icon, Snackbar, FABButton, Dialog, DialogTitle, DialogContent, DialogActions} from 'react-mdl';
-
+import { addItemToBag } from  '../../../lib/actions';
 import './index.css';
 
 class MyBag extends React.Component {
@@ -9,8 +10,9 @@ class MyBag extends React.Component {
     this.state = { isSnackbarActive: false };
   }
 
-
   addToBag() {
+    const item = this.props.info;
+    this.props.dispatch(addItemToBag(item.id))
     this.setState({ isSnackbarActive: true });
   }
 
@@ -36,4 +38,9 @@ class MyBag extends React.Component {
   }
 }
 
-export default MyBag;
+const mapStateToProps = state => ({
+  store: state,
+});
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyBag);

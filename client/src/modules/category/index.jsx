@@ -22,7 +22,7 @@ console.log(props)
 		<span style={{float:'right', marginBottom:10}} >You have <b>{items.length}</b> cusines to enjoy </span>
 		<hr/>
 	  		{
-	  			items.map(item => <ShortInfo info={item} />)
+	  			items.map((item, index) => <ShortInfo key={index} info={item} />)
 	  		}
 		</article>
 	</Layout>

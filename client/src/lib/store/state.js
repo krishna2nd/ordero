@@ -122,12 +122,14 @@ for (let i = 0; i < 100; i++) {
 	items.push(randomItem());
 }
 
-const order = {
+const orders = [{
+	status: 'done',
 	items: []
-}
+	}
+]
 
 export  {
 	items,
 	categories,
-	order
+	orders
 }

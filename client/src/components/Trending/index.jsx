@@ -1,12 +1,13 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
 
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import {Grid, Cell } from 'react-mdl';
 import Lini from '../Item/Lini';
 
 import './index.css';
 
-class LeftDrawer extends React.Component {
+class Trending extends React.Component {
   render() {
     const imgHeader = 'https://image.ibb.co/b1jsoG/unnamed_19.jpg'; //this.props.assets.headerImage;
     const item = {
@@ -15,7 +16,8 @@ class LeftDrawer extends React.Component {
       description: "sdsdsd sdss ds sds sdsd ",
       id: "idoftheitem",
     }
-    const items = [item,item,item,item];
+    const allItems = this.props.store.items;
+    const items = allItems.sort((a, b) => a - b).slice(0, 4)
     const col = (12/2);
 
     return (
@@ -34,4 +36,9 @@ class LeftDrawer extends React.Component {
 //   // assets: PropTypes.object
 // };
 
-export default LeftDrawer;
+const mapStateToProps = state => ({
+  store: state,
+});
+const mapDispatchToProps = dispatch => ({ dispatch });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Trending);
