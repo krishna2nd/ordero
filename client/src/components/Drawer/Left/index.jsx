@@ -1,6 +1,6 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import CategoryItem from '../../Item/Category';
 
@@ -23,11 +23,6 @@ class LeftDrawer extends React.Component {
     );
   }
 }
-
-// LeftDrawer.prototype = {
-//   // assets: PropTypes.object
-// };
-
 
 const mapStateToProps = state => {
   return {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Grid, Cell, Icon} from 'react-mdl';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import  './index.css';
 
 class Header extends Component {
@@ -45,15 +46,15 @@ class Header extends Component {
       <header className="header">
         <Grid noSpacing={true}>
           <Cell col={2} align="bottom">
-            <a href='/'>
+            <Link to='/'>
               <Icon name="home" className="home" />
-            </a>
-            <a href="/order/checkout">
+            </Link>
+            <Link to="/order/checkout">
               <Icon name="shopping_basket" className="basket" />
               {
                 count ? (<i className="count">{count}</i>) : null
               }
-            </a>
+            </Link>
           </Cell>
           <Cell col={6}></Cell>
           <Cell col={4} align="middle" >

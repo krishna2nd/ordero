@@ -9,7 +9,6 @@ import './index.css';
 function Item(props) {
 	const id = props.match.params.item;
 	const item = props.store.items.find(ele => ele.id == id);
-	console.log(props.store.items);
 	return (
 		<Layout >
 			<DetailInfo item={item} />

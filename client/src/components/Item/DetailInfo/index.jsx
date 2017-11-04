@@ -2,18 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Buttons from '../../Purchase/Buttons'
 import {Button, Icon, IconButton, DataTable, TableHeader} from 'react-mdl';
-
+import EmojiActions from '../../EmojiActions';
 import './index.css';
 
 class DetailInfo extends React.Component {
 	render() {
 		const item = this.props.item;
+		if (!item) {
+			return null;
+		}
 		return (
 		<div>
 		<div className="item-cover" style={{
 		backgroundImage: `url('${item.media.cover}')`
 	  }}></div>
 	  <article>
+	  	  <EmojiActions info={item} />
 		  <Buttons info={item} />
 		  <div className="details">
 			<h4>{item.title}</h4>

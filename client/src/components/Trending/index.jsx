@@ -25,7 +25,7 @@ class Trending extends React.Component {
         <h4>Trending cusines </h4>
         <b>Explore curated lists of top cusines based on trends</b>
         <Grid>
-          {items.map((item, index) => <Cell col={col}> <Lini key={`${item.title}-${index}`} info={item} /></Cell>)}  
+          {items.map((item, index) => <Cell key={`${index}-c`} col={col}> <Lini key={`${item.title}-${index}`} info={item} /></Cell>)}  
         </Grid>
       </div>
     );

@@ -1,6 +1,5 @@
 import {orders} from '../../store/state'
 export default function(state=orders, action) {
-	console.log(state);
 	switch(action.type) {
 		case 'ADD_ITEM_TO_BAG': {
 			let newState = [
@@ -40,7 +39,6 @@ export default function(state=orders, action) {
 			let newState = [
 				...state
 			];
-			console.log('STATE', newState, state)
 			let active = newState.find(order => order.status === 'active')
 			if (active) {
 				active.status = 'done';

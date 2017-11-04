@@ -18,8 +18,8 @@
   height: 40px;
   border-radius: 40px;
 }
-.cat-item a, .link-item {
-  color: gray;
+.cat-item span.title, .link-item {
+  color: #800000;
   text-decoration: none;
 }
 .cat-item a.title {

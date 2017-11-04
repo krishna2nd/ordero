@@ -1,12 +1,12 @@
-import React, { PropTypes } from 'react';
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 class ListItem extends React.Component {
   render() {
     const { info } = this.props;
     return (
-      <a href={`/${info.id}`} className="link-item">
+      <Link to={`/${info.id}`} className="link-item">
         <div className="list-item">
           <div className="image">
             <img src={info.image} alt={info.title} />
@@ -16,13 +16,9 @@ class ListItem extends React.Component {
             <div>{info.description}</div>
           </div>
         </div>
-      </a>
+      </Link>
     );
   }
 }
-
-// Item.prototype = {
-//  info: PropTypes.object
-// };
 
 export default ListItem;
